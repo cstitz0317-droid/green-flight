@@ -25,6 +25,31 @@ const airports = {
   "HKG": "Hong Kong International — Hong Kong",
   "ICN": "Incheon International — Seoul",
   "DEL": "Indira Gandhi International — New Delhi",
+  "DUS": "Düsseldorf Airport — Düsseldorf",
+  "MUC": "Munich Airport — Munich",
+  "ZRH": "Zurich Airport — Zurich",
+  "VIE": "Vienna International Airport — Vienna",
+  "CPH": "Copenhagen Airport — Copenhagen",
+  "ARN": "Stockholm Arlanda Airport — Stockholm",
+  "OSL": "Oslo Gardermoen Airport — Oslo",
+  "HEL": "Helsinki-Vantaa Airport — Helsinki",
+  "LIS": "Humberto Delgado Airport — Lisbon",
+  "FCO": "Leonardo da Vinci International — Rome",
+  "MXP": "Milan Malpensa Airport — Milan",
+  "ATH": "Athens International Airport — Athens",
+  "IST": "Istanbul Airport — Istanbul",
+  "CAI": "Cairo International Airport — Cairo",
+  "JNB": "OR Tambo International — Johannesburg",
+  "NBO": "Jomo Kenyatta International — Nairobi",
+  "BOM": "Chhatrapati Shivaji Maharaj — Mumbai",
+  "BKK": "Suvarnabhumi Airport — Bangkok",
+  "KUL": "Kuala Lumpur International — Kuala Lumpur",
+  "PEK": "Beijing Capital International — Beijing",
+  "PVG": "Shanghai Pudong International — Shanghai",
+  "SVO": "Sheremetyevo International — Moscow",
+  "YVR": "Vancouver International — Vancouver",
+  "MEL": "Melbourne Airport — Melbourne",
+  "AKL": "Auckland Airport — Auckland",
 };
 
 // Flight emissions data
@@ -104,6 +129,61 @@ const flightData = {
     { airline: "United Airlines", aircraft: "Boeing 787-9", age: "Modern", co2: 590, rating: "average" },
     { airline: "Air India", aircraft: "Airbus A350-900", age: "New", co2: 510, rating: "best" },
   ],
+  "JFK-FRA": [
+    { airline: "Lufthansa", aircraft: "Airbus A340-600", age: "Older", co2: 500, rating: "worst" },
+    { airline: "United Airlines", aircraft: "Boeing 767-400ER", age: "Modern", co2: 430, rating: "average" },
+    { airline: "Lufthansa", aircraft: "Airbus A350-900", age: "New", co2: 360, rating: "best" },
+  ],
+  "LAX-ICN": [
+    { airline: "Korean Air", aircraft: "Boeing 747-400", age: "Older", co2: 620, rating: "worst" },
+    { airline: "Asiana Airlines", aircraft: "Boeing 777-200ER", age: "Modern", co2: 510, rating: "average" },
+    { airline: "Korean Air", aircraft: "Airbus A380-800", age: "New", co2: 460, rating: "best" },
+  ],
+  "JFK-GRU": [
+    { airline: "LATAM Airlines", aircraft: "Boeing 767-300ER", age: "Older", co2: 580, rating: "worst" },
+    { airline: "American Airlines", aircraft: "Boeing 777-200ER", age: "Modern", co2: 500, rating: "average" },
+    { airline: "LATAM Airlines", aircraft: "Boeing 787-9", age: "New", co2: 420, rating: "best" },
+  ],
+  "LHR-DXB": [
+    { airline: "British Airways", aircraft: "Boeing 777-200", age: "Older", co2: 380, rating: "worst" },
+    { airline: "flydubai", aircraft: "Boeing 737 MAX 8", age: "Modern", co2: 290, rating: "average" },
+    { airline: "Emirates", aircraft: "Airbus A350-900", age: "New", co2: 250, rating: "best" },
+  ],
+  "SFO-SYD": [
+    { airline: "Qantas", aircraft: "Boeing 747-400", age: "Older", co2: 810, rating: "worst" },
+    { airline: "United Airlines", aircraft: "Boeing 787-9", age: "Modern", co2: 600, rating: "average" },
+    { airline: "Qantas", aircraft: "Airbus A350-1000", age: "New", co2: 520, rating: "best" },
+  ],
+  "ATL-LHR": [
+    { airline: "British Airways", aircraft: "Boeing 747-400", age: "Older", co2: 560, rating: "worst" },
+    { airline: "Delta Airlines", aircraft: "Airbus A330-300", age: "Modern", co2: 470, rating: "average" },
+    { airline: "Delta Airlines", aircraft: "Airbus A330-900neo", age: "New", co2: 400, rating: "best" },
+  ],
+  "YYZ-LHR": [
+    { airline: "Air Canada", aircraft: "Boeing 767-300ER", age: "Older", co2: 480, rating: "worst" },
+    { airline: "British Airways", aircraft: "Boeing 777-200", age: "Modern", co2: 420, rating: "average" },
+    { airline: "Air Canada", aircraft: "Boeing 787-9", age: "New", co2: 360, rating: "best" },
+  ],
+  "LAX-HKG": [
+    { airline: "Cathay Pacific", aircraft: "Boeing 777-300ER", age: "Older", co2: 640, rating: "worst" },
+    { airline: "United Airlines", aircraft: "Boeing 787-9", age: "Modern", co2: 520, rating: "average" },
+    { airline: "Cathay Pacific", aircraft: "Airbus A350-900", age: "New", co2: 450, rating: "best" },
+  ],
+  "JFK-IST": [
+    { airline: "Turkish Airlines", aircraft: "Airbus A330-300", age: "Older", co2: 490, rating: "worst" },
+    { airline: "Turkish Airlines", aircraft: "Boeing 777-300ER", age: "Modern", co2: 420, rating: "average" },
+    { airline: "Turkish Airlines", aircraft: "Airbus A350-900", age: "New", co2: 360, rating: "best" },
+  ],
+  "LHR-JNB": [
+    { airline: "South African Airways", aircraft: "Airbus A340-300", age: "Older", co2: 610, rating: "worst" },
+    { airline: "British Airways", aircraft: "Boeing 777-200", age: "Modern", co2: 530, rating: "average" },
+    { airline: "Virgin Atlantic", aircraft: "Airbus A350-1000", age: "New", co2: 450, rating: "best" },
+  ],
+  "SFO-AMS": [
+    { airline: "KLM", aircraft: "Boeing 747-400", age: "Older", co2: 590, rating: "worst" },
+    { airline: "United Airlines", aircraft: "Boeing 787-9", age: "Modern", co2: 450, rating: "average" },
+    { airline: "KLM", aircraft: "Boeing 787-10", age: "New", co2: 390, rating: "best" },
+  ],
 };
 
 // Grab elements from the page
@@ -146,7 +226,6 @@ searchBtn.addEventListener("click", function () {
 
   const sorted = [...flights].sort((a, b) => a.co2 - b.co2);
 
-  // Calculate CO2 savings between best and worst
   const best = sorted[0].co2;
   const worst = sorted[sorted.length - 1].co2;
   const savings = worst - best;
@@ -181,4 +260,128 @@ destinationInput.addEventListener("keypress", function (e) {
 });
 originInput.addEventListener("keypress", function (e) {
   if (e.key === "Enter") searchBtn.click();
+});
+// Corporate Savings Calculator
+const calcBtn = document.getElementById("calcBtn");
+const calcResults = document.getElementById("calcResults");
+
+calcBtn.addEventListener("click", function () {
+  const routeInput = document.getElementById("calcRoute").value.trim().toUpperCase();
+  const flightsPerYear = parseInt(document.getElementById("calcFlights").value);
+  const passengersPerFlight = parseInt(document.getElementById("calcPassengers").value);
+
+  // Validate inputs
+  if (!routeInput || isNaN(flightsPerYear) || isNaN(passengersPerFlight)) {
+    calcResults.innerHTML = `<p class="no-results">Please fill in all three fields.</p>`;
+    return;
+  }
+
+  const parts = routeInput.split("-");
+  if (parts.length !== 2 || parts[0].length !== 3 || parts[1].length !== 3) {
+    calcResults.innerHTML = `<p class="no-results">Please enter route as ORIGIN-DESTINATION (e.g. JFK-LHR)</p>`;
+    return;
+  }
+
+  const key = routeInput;
+  const reverseKey = parts[1] + "-" + parts[0];
+  const flights = flightData[key] || flightData[reverseKey];
+
+  if (!flights) {
+    calcResults.innerHTML = `<p class="no-results">No data yet for ${routeInput}. Try JFK-LHR or LAX-CDG.</p>`;
+    return;
+  }
+
+  const sorted = [...flights].sort((a, b) => a.co2 - b.co2);
+  const bestFlight = sorted[0];
+  const worstFlight = sorted[sorted.length - 1];
+
+  const worstTotal = (worstFlight.co2 * flightsPerYear * passengersPerFlight) / 1000;
+  const bestTotal = (bestFlight.co2 * flightsPerYear * passengersPerFlight) / 1000;
+  const savedTotal = worstTotal - bestTotal;
+  const savedPercent = Math.round((savedTotal / worstTotal) * 100);
+
+  // Equivalent comparisons to make the number relatable
+  const carsOffRoad = Math.round(savedTotal / 4.6);
+  const treesNeeded = Math.round(savedTotal * 45);
+  const homesPerYear = Math.round(savedTotal / 7.5);
+
+  calcResults.innerHTML = `
+    <div class="calc-result-card">
+      <h3>📋 Your Annual Travel Carbon Report</h3>
+      <p class="calc-route-label">${parts[0]} → ${parts[1]} · ${flightsPerYear} flights/year · ${passengersPerFlight} passengers</p>
+
+      <div class="calc-comparison">
+        <div class="calc-col worst-col">
+          <div class="calc-col-label">❌ Current (Worst Option)</div>
+          <div class="calc-airline">${worstFlight.airline}</div>
+          <div class="calc-aircraft">${worstFlight.aircraft}</div>
+          <div class="calc-total">${worstTotal.toFixed(1)} tonnes CO₂/year</div>
+        </div>
+        <div class="calc-vs">VS</div>
+        <div class="calc-col best-col">
+          <div class="calc-col-label">🌿 Optimized (Best Option)</div>
+          <div class="calc-airline">${bestFlight.airline}</div>
+          <div class="calc-aircraft">${bestFlight.aircraft}</div>
+          <div class="calc-total">${bestTotal.toFixed(1)} tonnes CO₂/year</div>
+        </div>
+      </div>
+
+      <div class="calc-savings-total">
+        🎯 Your company could save <strong>${savedTotal.toFixed(1)} tonnes of CO₂</strong> per year — a <strong>${savedPercent}% reduction</strong>
+      </div>
+
+      <div class="calc-equivalents">
+        <div class="equiv">
+          <div class="equiv-number">${carsOffRoad}</div>
+          <div class="equiv-label">cars taken off the road</div>
+        </div>
+        <div class="equiv">
+          <div class="equiv-number">${treesNeeded.toLocaleString()}</div>
+          <div class="equiv-label">trees needed to offset</div>
+        </div>
+        <div class="equiv">
+          <div class="equiv-number">${homesPerYear}</div>
+          <div class="equiv-label">homes powered for a year</div>
+        </div>
+      </div>
+    </div>
+  `;
+});
+// Waitlist Form
+const waitlistBtn = document.getElementById("waitlistBtn");
+
+waitlistBtn.addEventListener("click", async function () {
+  const name = document.getElementById("wName").value.trim();
+  const email = document.getElementById("wEmail").value.trim();
+  const company = document.getElementById("wCompany").value.trim();
+  const flights = document.getElementById("wFlights").value.trim();
+
+  if (!name || !email || !company) {
+    alert("Please fill in your name, email and company.");
+    return;
+  }
+
+  waitlistBtn.textContent = "Submitting...";
+  waitlistBtn.disabled = true;
+
+  try {
+    const response = await fetch("https://formspree.io/f/xvzvdede", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, company, flights }),
+    });
+
+    if (response.ok) {
+      document.getElementById("waitlistForm").style.display = "none";
+      document.getElementById("waitlistSuccess").style.display = "block";
+    } else {
+      alert("Something went wrong. Please try again.");
+      waitlistBtn.textContent = "Join the Waitlist 🌿";
+      waitlistBtn.disabled = false;
+    }
+  } catch (error) {
+    alert("Something went wrong. Please try again.");
+    waitlistBtn.textContent = "Join the Waitlist 🌿";
+    waitlistBtn.disabled = false;
+  }
 });

@@ -14,29 +14,143 @@
   </header>
 
   <main>
+
+    <!-- SEARCH BOX -->
     <div class="search-box">
       <h2>Compare Flight Emissions</h2>
-
       <div class="inputs">
         <div class="input-group">
           <label for="origin">From</label>
           <input type="text" id="origin" placeholder="e.g. JFK" maxlength="3" />
           <span class="airport-name" id="originLabel"></span>
         </div>
-
         <div class="arrow">→</div>
-
         <div class="input-group">
           <label for="destination">To</label>
           <input type="text" id="destination" placeholder="e.g. LHR" maxlength="3" />
           <span class="airport-name" id="destinationLabel"></span>
         </div>
       </div>
-
       <button id="searchBtn">Search Flights</button>
     </div>
 
     <div class="results" id="results"></div>
+
+    <!-- CO2 CALCULATOR -->
+    <div class="calculator-section">
+      <h2>💼 Corporate Savings Calculator</h2>
+      <p class="calc-subtitle">Find out how much CO₂ your company could save by switching to greener flights.</p>
+      <div class="calc-box">
+        <div class="calc-inputs">
+          <div class="calc-group">
+            <label>Route (e.g. JFK-LHR)</label>
+            <input type="text" id="calcRoute" placeholder="e.g. JFK-LHR" />
+          </div>
+          <div class="calc-group">
+            <label>Flights per year</label>
+            <input type="number" id="calcFlights" placeholder="e.g. 50" min="1" />
+          </div>
+          <div class="calc-group">
+            <label>Passengers per flight</label>
+            <input type="number" id="calcPassengers" placeholder="e.g. 4" min="1" />
+          </div>
+        </div>
+        <button id="calcBtn">Calculate Savings</button>
+      </div>
+      <div id="calcResults"></div>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div class="how-it-works">
+      <h2>How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-icon">✈️</div>
+          <h3>Enter Your Route</h3>
+          <p>Type in your origin and destination using standard 3-letter airport codes like JFK or LHR.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">📊</div>
+          <h3>We Compare Aircraft</h3>
+          <p>Our database compares airlines flying that route based on aircraft type, age, and real fuel efficiency data.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">🌿</div>
+          <h3>Choose the Greenest</h3>
+          <p>See exactly how much CO₂ each option produces and pick the flight that aligns with your sustainability goals.</p>
+        </div>
+        <div class="step">
+          <div class="step-icon">📈</div>
+          <h3>Track Your Impact</h3>
+          <p>Companies can use GreenRoute to audit their entire travel history and reduce their carbon footprint over time.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-section">
+      <div class="stat">
+        <div class="stat-number">25+</div>
+        <div class="stat-label">Routes Covered</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Airports Indexed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">40%</div>
+        <div class="stat-label">Max CO₂ Savings</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">Free</div>
+        <div class="stat-label">Always Free to Search</div>
+      </div>
+    </div>
+
+    <!-- WAITLIST FORM -->
+    <div class="waitlist-section">
+      <div class="waitlist-box">
+        <div class="waitlist-left">
+          <h2>Get Early Access</h2>
+          <p>Join companies already using GreenRoute to hit their ESG targets. Be the first to access our full corporate audit dashboard.</p>
+          <ul class="waitlist-perks">
+            <li>✅ Full travel history audit</li>
+            <li>✅ ESG compliance reports</li>
+            <li>✅ API access for booking engines</li>
+            <li>✅ Priority support</li>
+          </ul>
+        </div>
+        <div class="waitlist-right">
+          <div id="waitlistForm">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" id="wName" placeholder="Jane Smith" />
+            </div>
+            <div class="form-group">
+              <label>Work Email</label>
+              <input type="email" id="wEmail" placeholder="jane@company.com" />
+            </div>
+            <div class="form-group">
+              <label>Company Name</label>
+              <input type="text" id="wCompany" placeholder="Acme Corp" />
+            </div>
+            <div class="form-group">
+              <label>Flights per year (approx)</label>
+              <input type="number" id="wFlights" placeholder="e.g. 200" />
+            </div>
+            <button id="waitlistBtn">Join the Waitlist 🌿</button>
+          </div>
+          <div id="waitlistSuccess" style="display:none;">
+            <div class="success-message">
+              <div class="success-icon">🎉</div>
+              <h3>You're on the list!</h3>
+              <p>We'll be in touch soon with early access details.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
   <footer>
