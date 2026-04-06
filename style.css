@@ -617,3 +617,93 @@ button#waitlistBtn:disabled {
   font-size: 14px;
   color: #666;
 }
+@media (max-width: 600px) {
+  header {
+    padding: 16px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  main {
+    padding: 24px 12px;
+  }
+
+  .search-box {
+    padding: 24px 16px;
+  }
+
+  .inputs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .arrow {
+    text-align: center;
+    padding: 0;
+    font-size: 18px;
+  }
+
+  .input-group input {
+    font-size: 16px;
+    text-align: left;
+    letter-spacing: 1px;
+  }
+
+  .result-card {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .card-right {
+    text-align: left;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-section {
+    gap: 20px;
+    padding: 24px 16px;
+  }
+
+  .stat-number {
+    font-size: 28px;
+  }
+
+  .waitlist-box {
+    flex-direction: column;
+    padding: 24px 16px;
+    gap: 24px;
+  }
+
+  .calc-inputs {
+    grid-template-columns: 1fr;
+  }
+
+  .calc-comparison {
+    flex-direction: column;
+  }
+
+  .calc-vs {
+    text-align: center;
+  }
+
+  .calc-equivalents {
+    gap: 20px;
+  }
+
+  .how-it-works {
+    margin-top: 40px;
+  }
+
+  .calculator-section {
+    margin-top: 40px;
+  }
+
+  .waitlist-section {
+    margin-top: 40px;
+  }
+}
