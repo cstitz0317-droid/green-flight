@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GreenRoute — Find the Cleanest Flight</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">🌿 GreenRoute</div>
+    <p class="tagline">Find the most sustainable way to fly</p>
+  </header>
+
+  <main>
+    <div class="search-box">
+      <h2>Compare Flight Emissions</h2>
+
+      <div class="inputs">
+        <div class="input-group">
+          <label for="origin">From</label>
+          <input type="text" id="origin" placeholder="e.g. JFK" maxlength="3" />
+          <span class="airport-name" id="originLabel"></span>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="input-group">
+          <label for="destination">To</label>
+          <input type="text" id="destination" placeholder="e.g. LHR" maxlength="3" />
+          <span class="airport-name" id="destinationLabel"></span>
+        </div>
+      </div>
+
+      <button id="searchBtn">Search Flights</button>
+    </div>
+
+    <div class="results" id="results"></div>
+  </main>
+
+  <footer>
+    <p>GreenRoute © 2026 — Helping companies fly cleaner</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
