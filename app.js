@@ -385,3 +385,180 @@ waitlistBtn.addEventListener("click", async function () {
     waitlistBtn.disabled = false;
   }
 });
+// PDF Report Generator
+function generatePDF(data) {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  const pageWidth = doc.internal.pageSize.getWidth();
+
+  // ── HEADER BACKGROUND
+  doc.setFillColor(26, 60, 52);
+  doc.rect(0, 0, pageWidth, 45, "F");
+
+  // ── LOGO TEXT
+  doc.setTextColor(255, 255, 255);
+  doc.setFontSize(22);
+  doc.setFont("helvetica", "bold");
+  doc.text("GreenRoute", 14, 20);
+
+  // ── TAGLINE
+  doc.setFontSize(10);
+  doc.setFont("helvetica", "normal");
+  doc.setTextColor(149, 213, 178);
+  doc.text("Sustainable Aviation Intelligence", 14, 30);
+
+  // ── REPORT TITLE
+  doc.setFontSize(11);
+  doc.setTextColor(255, 255, 255);
+  doc.text("Corporate Carbon Audit Report", pageWidth - 14, 20, { align: "right" });
+  doc.text(`Generated: ${new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}`, pageWidth - 14, 30, { align: "right" });
+
+  // ── ROUTE TITLE
+  doc.setTextColor(26, 60, 52);
+  doc.setFontSize(20);
+  doc.setFont("helvetica", "bold");
+  doc.text(`${data.origin} → ${data.destination}`, 14, 62);
+
+  // ── ROUTE SUBTITLE
+  doc.setFontSize(11);
+  doc.setFont("helvetica", "normal");
+  doc.setTextColor(100, 100, 100);
+  doc.text(`${data.flightsPerYear} flights/year · ${data.passengersPerFlight} passengers per flight`, 14, 72);
+
+  // ── DIVIDER
+  doc.setDrawColor(220, 220, 220);
+  doc.line(14, 78, pageWidth - 14, 78);
+
+  // ── SECTION: WORST OPTION
+  doc.setFillColor(253, 232, 232);
+  doc.roundedRect(14, 84, (pageWidth - 32) / 2 - 4, 52, 4, 4, "F");
+  doc.setTextColor(160, 0, 0);
+  doc.setFontSize(9);
+  doc.setFont("helvetica", "bold");
+  doc.text("CURRENT WORST OPTION", 20, 94);
+  doc.setTextColor(30, 30, 30);
+  doc.setFontSize(13);
+  doc.text(data.worstFlight.airline, 20, 104);
+  doc.setFontSize(10);
+  doc.setFont("helvetica", "normal");
+  doc.setTextColor(100, 100, 100);
+  doc.text(data.worstFlight.aircraft, 20, 113);
+  doc.setFontSize(16);
+  doc.setFont("helvetica", "bold");
+  doc.setTextColor(26, 60, 52);
+  doc.text(`${data.worstTotal.toFixed(1)} t CO₂/yr`, 20, 126);
+
+  // ── SECTION: BEST OPTION
+  doc.setFillColor(216, 243, 220);
+  doc.roundedRect((pageWidth / 2) + 2, 84, (pageWidth - 32) / 2 - 4, 52, 4, 4, "F");
+  doc.setTextColor(26, 100, 60);
+  doc.setFontSize(9);
+  doc.setFont("helvetica", "bold");
+  doc.text("GREENEST OPTION", (pageWidth / 2) + 8, 94);
+  doc.setTextColor(30, 30, 30);
+  doc.setFontSize(13);
+  doc.text(data.bestFlight.airline, (pageWidth / 2) + 8, 104);
+  doc.setFontSize(10);
+  doc.setFont("helvetica", "normal");
+  doc.setTextColor(100, 100, 100);
+  doc.text(data.bestFlight.aircraft, (pageWidth / 2) + 8, 113);
+  doc.setFontSize(16);
+  doc.setFont("helvetica", "bold");
+  doc.setTextColor(26, 60, 52);
+  doc.text(`${data.bestTotal.toFixed(1)} t CO₂/yr`, (pageWidth / 2) + 8, 126);
+
+  // ── SAVINGS BANNER
+  doc.setFillColor(26, 60, 52);
+  doc.roundedRect(14, 142, pageWidth - 28, 22, 4, 4, "F");
+  doc.setTextColor(255, 255, 255);
+  doc.setFontSize(12);
+  doc.setFont("helvetica", "bold");
+  doc.text(`Annual Savings: ${data.savedTotal.toFixed(1)} tonnes CO₂  —  ${data.savedPercent}% reduction`, pageWidth / 2, 156, { align: "center" });
+
+  // ── DIVIDER
+  doc.setDrawColor(220, 220, 220);
+  doc.line(14, 172, pageWidth - 14, 172);
+
+  // ── EQUIVALENTS TITLE
+  doc.setTextColor(26, 60, 52);
+  doc.setFontSize(13);
+  doc.setFont("helvetica", "bold");
+  doc.text("What This Saving Means", 14, 184);
+
+  // ── EQUIVALENTS BOXES
+  const equivData = [
+    { number: data.carsOffRoad, label: "Cars taken off\nthe road" },
+    { number: data.treesNeeded.toLocaleString(), label: "Trees needed\nto offset" },
+    { number: data.homesPerYear, label: "Homes powered\nfor a year" },
+  ];
+
+  const boxWidth = (pageWidth - 32) / 3 - 4;
+  equivData.forEach((item, i) => {
+    const x = 14 + i * (boxWidth + 6);
+    doc.setFillColor(240, 247, 242);
+    doc.roundedRect(x, 190, boxWidth, 36, 4, 4, "F");
+    doc.setTextColor(26, 60, 52);
+    doc.setFontSize(18);
+    doc.setFont("helvetica", "bold");
+    doc.text(String(item.number), x + boxWidth / 2, 204, { align: "center" });
+    doc.setFontSize(8);
+    doc.setFont("helvetica", "normal");
+    doc.setTextColor(100, 100, 100);
+    const lines = item.label.split("\n");
+    lines.forEach((line, j) => {
+      doc.text(line, x + boxWidth / 2, 213 + j * 7, { align: "center" });
+    });
+  });
+
+  // ── DIVIDER
+  doc.setDrawColor(220, 220, 220);
+  doc.line(14, 234, pageWidth - 14, 234);
+
+  // ── ALL FLIGHTS TABLE
+  doc.setTextColor(26, 60, 52);
+  doc.setFontSize(13);
+  doc.setFont("helvetica", "bold");
+  doc.text("Full Route Comparison", 14, 246);
+
+  // Table header
+  doc.setFillColor(26, 60, 52);
+  doc.rect(14, 250, pageWidth - 28, 10, "F");
+  doc.setTextColor(255, 255, 255);
+  doc.setFontSize(9);
+  doc.setFont("helvetica", "bold");
+  doc.text("Airline", 18, 257);
+  doc.text("Aircraft", 80, 257);
+  doc.text("Age", 140, 257);
+  doc.text("CO₂/passenger", 165, 257);
+
+  // Table rows
+  data.allFlights.forEach((flight, i) => {
+    const y = 267 + i * 12;
+    doc.setFillColor(i % 2 === 0 ? 248 : 255, i % 2 === 0 ? 249 : 255, i % 2 === 0 ? 250 : 255);
+    doc.rect(14, y - 7, pageWidth - 28, 12, "F");
+    doc.setTextColor(30, 30, 30);
+    doc.setFontSize(9);
+    doc.setFont("helvetica", "normal");
+    doc.text(flight.airline, 18, y);
+    doc.text(flight.aircraft, 80, y);
+    doc.text(flight.age, 140, y);
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor(flight.rating === "best" ? 26 : flight.rating === "worst" ? 160 : 100,
+                     flight.rating === "best" ? 100 : flight.rating === "worst" ? 0 : 100,
+                     flight.rating === "best" ? 60 : flight.rating === "worst" ? 0 : 100);
+    doc.text(`${flight.co2} kg`, 175, y);
+  });
+
+  // ── FOOTER
+  const footerY = doc.internal.pageSize.getHeight() - 14;
+  doc.setFillColor(26, 60, 52);
+  doc.rect(0, footerY - 10, pageWidth, 24, "F");
+  doc.setTextColor(255, 255, 255);
+  doc.setFontSize(9);
+  doc.setFont("helvetica", "normal");
+  doc.text("GreenRoute © 2026 — greenroute.vercel.app", 14, footerY);
+  doc.text("Confidential Carbon Audit Report", pageWidth - 14, footerY, { align: "right" });
+
+  // ── SAVE
+  doc.save(`GreenRoute-Audit-${data.origin}-${data.destination}.pdf`);
+}
