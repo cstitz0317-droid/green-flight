@@ -1,0 +1,227 @@
+.pricing-hero {
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
+  color: white;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.pricing-hero h1 {
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin: 16px 0 12px;
+}
+
+.pricing-hero h1 span {
+  color: #95d5b2;
+}
+
+.pricing-hero p {
+  font-size: 17px;
+  opacity: 0.8;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.pricing-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 16px;
+  gap: 80px;
+}
+
+/* ── PRICING GRID ── */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 960px;
+  align-items: start;
+}
+
+.pricing-card {
+  background: white;
+  border-radius: 20px;
+  padding: 36px 28px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 2px solid transparent;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.pricing-card-featured {
+  border-color: var(--green-light);
+  transform: scale(1.03);
+}
+
+.pricing-card-featured:hover {
+  transform: scale(1.03) translateY(-4px);
+}
+
+.plan-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--green-light);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 5px 16px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.plan-name {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gray-4);
+}
+
+.plan-price {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--green-dark);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.plan-price span {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gray-3);
+}
+
+.plan-desc {
+  font-size: 14px;
+  color: var(--gray-4);
+  line-height: 1.6;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--gray-2);
+}
+
+.plan-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.plan-features li {
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.plan-features li.disabled {
+  color: var(--gray-3);
+  font-weight: 400;
+}
+
+.plan-btn {
+  display: block;
+  text-align: center;
+  padding: 14px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+
+.plan-btn-solid {
+  background: linear-gradient(135deg, var(--green-mid), var(--green-dark));
+  color: white;
+}
+
+.plan-btn-solid:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.plan-btn-outline {
+  background: white;
+  color: var(--green-dark);
+  border: 2px solid var(--green-light);
+}
+
+.plan-btn-outline:hover {
+  background: var(--green-pale);
+  transform: translateY(-1px);
+}
+
+/* ── FAQ ── */
+.faq-section {
+  width: 100%;
+  max-width: 860px;
+}
+
+.faq-section h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--green-dark);
+  text-align: center;
+  margin-bottom: 36px;
+  letter-spacing: -0.5px;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.faq-item {
+  background: white;
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-item h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--green-dark);
+  margin-bottom: 10px;
+}
+
+.faq-item p {
+  font-size: 13px;
+  color: var(--gray-4);
+  line-height: 1.7;
+}
+
+/* ── BOTTOM CTA ── */
+.pricing-cta {
+  background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+  border-radius: 20px;
+  padding: 56px 40px;
+  text-align: center;
+  color: white;
+  width: 100%;
+  max-width: 860px;
+}
+
+.pricing-cta h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
