@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GreenRoute — Page Not Found</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .not-found {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      text-align: center;
+      padding: 80px 24px;
+      gap: 16px;
+    }
+    .not-found-icon { font-size: 72px; }
+    .not-found h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--green-dark);
+    }
+    .not-found p {
+      font-size: 16px;
+      color: #666;
+      max-width: 400px;
+      line-height: 1.6;
+    }
+    .not-found a {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 14px 32px;
+      background: linear-gradient(135deg, #2d6a4f, #1a3c34);
+      color: white;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      transition: opacity 0.2s;
+    }
+    .not-found a:hover { opacity: 0.9; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">🌿 GreenRoute</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Search</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="index.html#waitlist" class="nav-cta">Get Early Access</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="not-found">
+      <div class="not-found-icon">✈️</div>
+      <h1>Flight Not Found</h1>
+      <p>Looks like this page took a wrong turn somewhere over the Atlantic. Let's get you back on course.</p>
+      <a href="index.html">← Back to GreenRoute</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>GreenRoute © 2026 — Helping companies fly cleaner · Built with 🌿</p>
+  </footer>
+</body>
+</html>
